@@ -13,3 +13,10 @@ POST {{DOMAIN}}/graphql
 {
 	"query": "{ users { id name email age } }"
 }
+
+### Query user
+POST {{DOMAIN}}/graphql
+
+{
+	"query": "{ user(id: 1) { id name email age } }"
+}
