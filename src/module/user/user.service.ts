@@ -20,16 +20,16 @@ export class UserService {
 		return this.userRepo.find();
 	}
 
-	findOne(id: number): Promise<User> {
+	findOne(id: string): Promise<User> {
 		return this.userRepo.findOneBy({ id });
 	}
 
-	async update(id: number, updateUserInput: UpdateUserDTO): Promise<User> {
+	async update(id: string, updateUserInput: UpdateUserDTO): Promise<User> {
 		await this.userRepo.update(id, updateUserInput);
 		return this.findOne(id);
 	}
 
-	async remove(id: number): Promise<User> {
+	async remove(id: string): Promise<User> {
 		const user = await this.findOne(id);
 		const deletedUser = { ...user }; // clone to preserve ID
 		await this.userRepo.remove(user);

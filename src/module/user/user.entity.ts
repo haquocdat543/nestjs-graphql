@@ -5,8 +5,8 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()     // TypeORM Entity
 export class User {
   @Field(() => ID)
-  @PrimaryGeneratedColumn()
-  id: number;
+	@PrimaryGeneratedColumn("uuid")
+  id: string;
 
   @Field()
   @Column()

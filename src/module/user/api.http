@@ -1,4 +1,5 @@
 @DOMAIN = http://localhost:3000
+@ID = c0ad5cb3-17a6-4a34-b196-050d1530370e
 
 ### Mutation createUser
 POST {{DOMAIN}}/graphql
@@ -18,27 +19,27 @@ POST {{DOMAIN}}/graphql
 POST {{DOMAIN}}/graphql
 
 {
-	"query": "{ user(id: 1) { id name email age } }"
+	"query": "{ user(id: \"{{ID}}\") { id name email age } }"
 }
 
 ### Mutation updateUser
 POST {{DOMAIN}}/graphql
 
 {
-	"query": "mutation { updateUser( input: { id: 1, name: \"Alice\", email: \"alice2@gmail.com\", age: 26 } ) { id name email age } }"
+	"query": "mutation { updateUser( input: { id: \"{{ID}}\", name: \"Alice\", email: \"alice2@gmail.com\", age: 26 } ) { id name email age } }"
 }
 
 ### Mutation updateUser
 POST {{DOMAIN}}/graphql
 
 {
-	"query": "mutation { updateUser( input: { id: 1, name: \"Alice\", email: \"alice@gmail.com\", age: 25 } ) { id name email age } }"
+	"query": "mutation { updateUser( input: { id: \"{{ID}}\", name: \"Alice\", email: \"alice@gmail.com\", age: 25 } ) { id name email age } }"
 }
 
 ### Mutation removeUser
 POST {{DOMAIN}}/graphql
 
 {
-	"query": "mutation { removeUser(id: 1) { id name } }"
+	"query": "mutation { removeUser(id: \"{{ID}}\") { id name } }"
 }
 
