@@ -31,8 +31,9 @@ export class UserService {
 
 	async remove(id: number): Promise<User> {
 		const user = await this.findOne(id);
+		const deletedUser = { ...user }; // clone to preserve ID
 		await this.userRepo.remove(user);
-		return user;
+		return deletedUser;
 	}
 }
 
