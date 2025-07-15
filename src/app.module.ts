@@ -11,6 +11,7 @@ import { UserModule } from './module/user/user.module';
 			driver: ApolloDriver,
 			autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
 			playground: true, // optional: enables the GraphQL playground
+			introspection: true,
 		}),
 		TypeOrmModule.forRoot({
 			type: 'postgres',
