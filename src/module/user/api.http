@@ -1,8 +1,15 @@
 @DOMAIN = http://localhost:3000
 
-### POST
+### Mutation createUser
 POST {{DOMAIN}}/graphql
 
 {
 	"query": "mutation { createUser( input: { name: \"Alice\", email: \"alice@example.com\", age: 25 } ) { id name email age } }"
+}
+
+### Query users
+POST {{DOMAIN}}/graphql
+
+{
+	"query": "{ users { id name email age } }"
 }
