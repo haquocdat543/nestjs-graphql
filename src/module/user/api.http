@@ -35,3 +35,10 @@ POST {{DOMAIN}}/graphql
 	"query": "mutation { updateUser( input: { id: 1, name: \"Alice\", email: \"alice@gmail.com\", age: 25 } ) { id name email age } }"
 }
 
+### Mutation removeUser
+POST {{DOMAIN}}/graphql
+
+{
+	"query": "mutation { removeUser(id: 1) { id name } }"
+}
+
