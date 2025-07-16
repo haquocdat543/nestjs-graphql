@@ -1,5 +1,5 @@
 // update-user.input.ts
-import { InputType, Field, Int, PartialType } from '@nestjs/graphql';
+import { InputType, Field, PartialType } from '@nestjs/graphql';
 import { CreateUserDTO } from './CreateUserDTO';
 
 @InputType()
