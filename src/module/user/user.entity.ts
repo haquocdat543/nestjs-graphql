@@ -2,10 +2,10 @@ import { ObjectType, Field, Int, ID } from '@nestjs/graphql';
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @ObjectType() // GraphQL Type
-@Entity()     // TypeORM Entity
+@Entity() // TypeORM Entity
 export class User {
   @Field(() => ID)
-	@PrimaryGeneratedColumn("uuid")
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Field()
@@ -20,4 +20,3 @@ export class User {
   @Column()
   age: number;
 }
-

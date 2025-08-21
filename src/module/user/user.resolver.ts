@@ -33,4 +33,3 @@ export class UserResolver {
     return this.userService.remove(id);
   }
 }
-

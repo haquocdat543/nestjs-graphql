@@ -6,25 +6,24 @@ import { join } from 'path';
 import { UserModule } from './module/user/user.module';
 
 @Module({
-	imports: [
-		GraphQLModule.forRoot<ApolloDriverConfig>({
-			driver: ApolloDriver,
-			autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
-			playground: true, // optional: enables the GraphQL playground
-			introspection: true,
-		}),
-		TypeOrmModule.forRoot({
-			type: 'postgres',
-			host: 'localhost',
-			port: 5439,
-			username: 'develop',
-			password: 'effimatebackend',
-			database: 'postgres',
-			entities: [__dirname + '/**/*.entity{.ts,.js}'],
-			synchronize: true,
-		}),
-		UserModule,
-	],
+  imports: [
+    GraphQLModule.forRoot<ApolloDriverConfig>({
+      driver: ApolloDriver,
+      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+      playground: true, // optional: enables the GraphQL playground
+      introspection: true,
+    }),
+    TypeOrmModule.forRoot({
+      type: 'postgres',
+      host: 'localhost',
+      port: 5439,
+      username: 'develop',
+      password: 'effimatebackend',
+      database: 'postgres',
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      synchronize: true,
+    }),
+    UserModule,
+  ],
 })
-export class AppModule { }
-
+export class AppModule {}

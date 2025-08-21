@@ -12,4 +12,3 @@ export class CreateUserDTO {
   @Field(() => Int)
   age: number;
 }
-
